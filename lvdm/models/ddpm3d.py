@@ -515,7 +515,7 @@ class LatentDiffusion(DDPM, nn.Module):
         if reshape_back:
             results = rearrange(results, '(b t) c h w -> b c t h w', b=b,t=t)
         
-        print("##$#$#$#$#$#$#$#$")
+        # print("##$#$#$#$#$#$#$#$")
         return results
 
     @torch.no_grad()

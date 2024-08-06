@@ -18,6 +18,7 @@ from typing import Dict, Optional, Tuple
 import torch
 import torchvision
 import torch.nn.functional as F
+import torch.nn.init as init
 import torch.distributed as dist
 from torch.optim.swa_utils import AveragedModel
 from torch.utils.data.distributed import DistributedSampler
@@ -37,6 +38,8 @@ from pytorch_lightning import seed_everything
 
 from funcs import load_model_checkpoint, load_prompts, load_image_batch, get_filelist, save_videos
 from funcs import batch_ddim_sampling
+from funcs import initialize_params
+from funcs import save_videos
 from utils.utils import instantiate_from_config
 
 from scripts.evaluation.data.dataset import WebVid10M
@@ -124,6 +127,14 @@ def get_parser():
     
     parser.add_argument("--global_seed", type=int, default=42, help="Global random seed")
     parser.add_argument("--is_debug", type=bool, default=False, help="Flag for debug mode")
+
+    parser.add_argument('--is_main_process', default=True, help='Is main process for distributed training')
+    parser.add_argument('--use_wandb', default=True, help='Using wandb for training')
+
+
+    parser.add_argument('--gpu_no', type=int, default=0, help='GPU number to use for training')
+    parser.add_argument('--random_init', type=bool, default=True, help='Unet parameter initialization with random value')
+
     
     ############################################################################################################################################################
     return parser
@@ -142,11 +153,14 @@ def train_mmg(args, gpu_num, gpu_no, **kwargs):
     mmg_model = instantiate_from_config(model_config)
     teacher_model = instantiate_from_config(model_config)
 
+    
     mmg_model = mmg_model.cuda(gpu_no)
-    teacher_model = teacher_model.cuda(gpu_no)
+    teacher_model = teacher_model.cuda((gpu_no + 1) % gpu_num)
     assert os.path.exists(args.ckpt_path), f"Error: checkpoint [{args.ckpt_path}] Not Found!"
     mmg_model = load_model_checkpoint(mmg_model, args.ckpt_path)
     teacher_model = load_model_checkpoint(teacher_model, args.ckpt_path)
+
+    initialize_params(mmg_model)
 
     mmg_model.train()
     teacher_model.eval()
@@ -182,10 +196,11 @@ def train_mmg(args, gpu_num, gpu_no, **kwargs):
     os.makedirs(f"{output_dir}/samples", exist_ok=True)
     os.makedirs(f"{output_dir}/sanity_check", exist_ok=True)
     os.makedirs(f"{output_dir}/checkpoints", exist_ok=True)
+
     
     #training_params = mmg_model.parameters()
     trainable_params = list(filter(lambda p: p.requires_grad, mmg_model.parameters()))
-
+   
     optimizer = torch.optim.AdamW(
         trainable_params,
         lr=args.learning_rate,
@@ -193,6 +208,8 @@ def train_mmg(args, gpu_num, gpu_no, **kwargs):
         weight_decay=args.adam_weight_decay,
         eps=args.adam_epsilon,
     )
+    
+
     
     num_trainable_params = sum(p.numel() for p in trainable_params)
     print(f"Number of trainable parameters: {num_trainable_params}")
@@ -211,7 +228,7 @@ def train_mmg(args, gpu_num, gpu_no, **kwargs):
     train_dataloader = torch.utils.data.DataLoader(
         train_dataset,
         batch_size=args.train_batch_size,
-        shuffle=False,
+        shuffle=True,
         pin_memory=True,
         drop_last=True,
     )
@@ -245,10 +262,11 @@ def train_mmg(args, gpu_num, gpu_no, **kwargs):
     progress_bar = tqdm(range(global_step, args.max_train_steps))
     progress_bar.set_description("Steps")
     
-    
+    num_train_epochs = 50
     for epoch in range(first_epoch, num_train_epochs):
         mmg_model.train()
         for step, batch in enumerate(train_dataloader):
+            start_time = time.time()  # 스텝 시작 시간 기록
             if args.cfg_random_null_text:
                 batch['text'] = [name if random.random() > args.cfg_random_null_text_ratio else "" for name in batch['text']]
                 
@@ -269,11 +287,18 @@ def train_mmg(args, gpu_num, gpu_no, **kwargs):
             ### >>>> Training >>>> ###
                 
             # Convert videos to latent space            
-            pixel_values = batch["pixel_values"].cuda(gpu_no)
+            pixel_values = batch["pixel_values"]
+            if pixel_values.device != torch.device(f'cuda:{(gpu_no + 1) % gpu_num}'):
+                pixel_values = pixel_values.cuda((gpu_no + 1) % gpu_num)
+                 
             video_length = pixel_values.shape[1]
+            # with torch.no_grad():
+            #     #pixel_values = rearrange(pixel_values, "b f c h w -> (b f) c h w")
+            #     latents = mmg_model.encode_first_stage_2DAE(pixel_values) #scale factor가 이미 곱해져있음
+
             with torch.no_grad():
                 #pixel_values = rearrange(pixel_values, "b f c h w -> (b f) c h w")
-                latents = mmg_model.encode_first_stage_2DAE(pixel_values) #scale factor가 이미 곱해져있음
+                latents = teacher_model.encode_first_stage_2DAE(pixel_values) #scale factor가 이미 곱해져있음
 
             # Sample noise that we'll add to the latents
             noise = torch.randn_like(latents)
@@ -285,8 +310,9 @@ def train_mmg(args, gpu_num, gpu_no, **kwargs):
             
             # Add noise to the latents according to the noise magnitude at each timestep
             # (this is the forward diffusion process)
-            noisy_latents, GT_noise = mmg_model.q_sample(latents, timesteps)
+            noisy_latents, GT_noise = teacher_model.q_sample(latents, timesteps)
             
+
             # conditioned_embeddings = []
             # with torch.no_grad():
             #     for text in batch["text"]:
@@ -295,13 +321,66 @@ def train_mmg(args, gpu_num, gpu_no, **kwargs):
 
             # # 배치 단위로 텍스트 임베딩을 합침
             # c_emb= torch.stack(conditioned_embeddings)
+            # with torch.no_grad():
+            #     c_emb_mmg = mmg_model.get_learned_conditioning(batch["text"])
+
+            # with torch.no_grad():
+            #     c_emb_teacher = teacher_model.get_learned_conditioning(batch["text"])
+
             with torch.no_grad():
-                c_emb = mmg_model.get_learned_conditioning(batch["text"])
+                c_emb = teacher_model.get_learned_conditioning(batch["text"])
+
+            # GPU로 이동
             
-            print("conditioned_embeddings.shape: ", c_emb.shape)
-            mmg_output = mmg_model.apply_model(noisy_latents, timesteps, c_emb)
+            # noisy_latents_teacher = noisy_latents.cuda((gpu_no + 1) % gpu_num)
+            # timesteps_teacher = timesteps.cuda((gpu_no + 1) % gpu_num)
+            noisy_latents_student = noisy_latents.cuda(gpu_no)
+            timesteps_student = timesteps.cuda(gpu_no)
+            c_emb_student = c_emb.cuda(gpu_no)
+    
+            #mmg_output = mmg_model.apply_model(noisy_latents, timesteps, c_emb_mmg)
+            mmg_output = mmg_model.apply_model(noisy_latents_student, timesteps_student, c_emb_student)
+
+            #teacher_output = teacher_model.apply_model(noisy_latents_teacher, timesteps_teacher, c_emb_teacher).cuda(gpu_no)
             teacher_output = teacher_model.apply_model(noisy_latents, timesteps, c_emb)
 
+
+            print("############################################################")
+            print("latents.device: ",latents.device)
+            print("timesteps.device: ", timesteps.device)
+            print("teacher_model.device: ", teacher_model.device)
+            print("noisy_latents.device: ",noisy_latents.device)
+            print("c_emb.device: ", c_emb.device)
+            print("teacher_output.device: ", teacher_output.device)
+            
+            print("timesteps_student.device: ", timesteps_student.device)
+            print("mmg_model.device: ", mmg_model.device)
+            print("noisy_latents_student.device: ",noisy_latents_student.device)
+            print("c_emb_student.device: ", c_emb_student.device)
+
+            print("############################################################")
+
+            if step % 5 == 0:
+                predict_z0 = teacher_model.predict_start_from_noise(noisy_latents, timesteps, GT_noise)
+                print("###################################################################################")
+                
+    
+                batch_images = teacher_model.decode_first_stage_2DAE(predict_z0)
+                batch_variants = []
+                batch_variants.append(batch_images)
+                batch_variants = torch.stack(batch_variants, dim=1)
+                
+                filenames = f"step{step}_samples"
+            
+                epoch_dir = os.path.join(args.savedir, f"epoch_{epoch}")
+                if not os.path.exists(epoch_dir):
+                    os.makedirs(epoch_dir, exist_ok=True)
+    
+                save_videos(batch_variants, epoch_dir, filenames, fps=args.savefps)
+            
+            teacher_output = teacher_model.apply_model(noisy_latents, timesteps, c_emb).cuda(gpu_no)
+
+            
             loss = F.mse_loss(mmg_output.float(), teacher_output.float(), reduction="mean")
             optimizer.zero_grad()
             loss.backward()
@@ -309,41 +388,64 @@ def train_mmg(args, gpu_num, gpu_no, **kwargs):
             optimizer.step()
             
             lr_scheduler.step()
-            progress_bar.update(1)
             global_step += 1
-            
+
+            end_time = time.time()  # 스텝 종료 시간 기록
+            elapsed_time = end_time - start_time  # 경과 시간 계산
+
+             # 배치 크기와 경과 시간 출력
+            print(f"Batch: {len(batch['pixel_values'])}, Time: {elapsed_time:.2f}s")
+
+            # 진행 막대에 현재 상태를 업데이트
+            logs = {"step_loss": loss.detach().item(), "lr": lr_scheduler.get_last_lr()[0]}
+            progress_bar.set_postfix(logs)
+            progress_bar.update(1)                         
             ### <<<< Training <<<< ###
             
             # Wandb logging
-            if args.is_main_process and (not args.is_debug) and args.use_wandb:
+            if args.is_main_process and args.use_wandb:
                 wandb.log({"train_loss": loss.item()}, step=global_step)
                 
-            # Save checkpoint
-            if args.is_main_process and (global_step % args.checkpointing_steps == 0 or step == len(train_dataloader) - 1):
-                save_path = os.path.join(output_dir, f"checkpoints")
-                state_dict = {
-                    "epoch": args.epoch,
-                    "global_step": global_step,
-                    "state_dict": mmg_model.state_dict(),
-                }
-                if step == len(train_dataloader) - 1:
-                    torch.save(state_dict, os.path.join(save_path, f"checkpoint-epoch-{epoch+1}.ckpt"))
-                else:
-                    torch.save(state_dict, os.path.join(save_path, f"checkpoint.ckpt"))
-                logging.info(f"Saved state to {save_path} (global_step: {global_step})")
+            # # Save checkpoint
+            # if args.is_main_process and (global_step % args.checkpointing_steps == 0 or step == len(train_dataloader) - 1):
+            #     save_path = os.path.join(output_dir, f"checkpoints")
+            #     state_dict = {
+            #         "epoch": epoch,
+            #         "global_step": global_step,
+            #         "state_dict": mmg_model.state_dict(),
+            #     }
+            #     if step == len(train_dataloader) - 1:
+            #         torch.save(state_dict, os.path.join(save_path, f"checkpoint-epoch-{epoch+1}.ckpt"))
+            #     else:
+            #         torch.save(state_dict, os.path.join(save_path, f"checkpoint.ckpt"))
+            #     logging.info(f"Saved state to {save_path} (global_step: {global_step})")
                 
             
-            logs = {"step_loss": loss.detach().item(), "lr": lr_scheduler.get_last_lr()[0]}
-            progress_bar.set_postfix(**logs)
             
             if global_step >= args.max_train_steps:
                 break
 
+        state_dict = {
+                    "epoch": epoch,
+                    "global_step": global_step,
+                    "state_dict": mmg_model.state_dict(),
+                }
+        save_path = os.path.join(output_dir, f"checkpoints")
+        torch.save(state_dict, os.path.join(save_path, f"checkpoint-epoch-{epoch+1}.ckpt"))
+        logging.info(f"Saved state to {save_path} (global_step: {global_step})")
+        print("
+
 if __name__ == '__main__':
     now = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
-    print("@CoLVDM Training: %s"%now)
+    print("@CoLVDM Training: %s" % now)
     parser = get_parser()
     videocrafter_args = parser.parse_args()
     seed_everything(videocrafter_args.seed)
-    rank, gpu_num = 0, 1
-    train_mmg(videocrafter_args, gpu_num, rank)
+
+    # GPU 번호를 argparse 인자로 받기
+    gpu_no = videocrafter_args.gpu_no
+
+    # 전체 GPU 개수 가져오기
+    gpu_num = torch.cuda.device_count()
+
+    train_mmg(videocrafter_args, gpu_num, gpu_no)

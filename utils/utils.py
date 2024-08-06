@@ -36,10 +36,10 @@ def instantiate_from_config(config):
             return None
         raise KeyError("Expected key `target` to instantiate.")
     
-    print("###########################################################################")
-    #print(get_obj_from_str(config["target"])(**config.get("params", dict())))
-    print(get_obj_from_str(config["target"]))
-    print("###########################################################################")
+    # print("###########################################################################")
+    # #print(get_obj_from_str(config["target"])(**config.get("params", dict())))
+    # print(get_obj_from_str(config["target"]))
+    # print("###########################################################################")
 
     return get_obj_from_str(config["target"])(**config.get("params", dict()))
 

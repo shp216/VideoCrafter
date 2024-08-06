@@ -6,6 +6,8 @@ import cv2
 
 import torch
 import torchvision
+import torch.nn.init as init
+
 sys.path.insert(1, os.path.join(sys.path[0], '..', '..'))
 from lvdm.models.samplers.ddim import DDIMSampler
 
@@ -194,6 +196,15 @@ def save_videos(batch_tensors, savedir, filenames, fps=10):
         grid = torch.stack(frame_grids, dim=0) # stack in temporal dim [t, 3, n*h, w]
         grid = (grid + 1.0) / 2.0
         grid = (grid * 255).to(torch.uint8).permute(0, 2, 3, 1)
-        savepath = os.path.join(savedir, f"{filenames[idx]}.mp4")
+        savepath = os.path.join(savedir, f"{filenames}.mp4")
         torchvision.io.write_video(savepath, grid, fps=fps, video_codec='h264', options={'crf': '10'})
+
+
+def initialize_params(model):
+        for name, param in model.named_parameters():
+            if param.requires_grad:
+                if param.dim() > 1:  # Convolutional layers and Linear layers typically have more than 1 dimension
+                    init.xavier_uniform_(param)
+                else:
+                    init.zeros_(param)
 
