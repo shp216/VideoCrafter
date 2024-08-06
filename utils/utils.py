@@ -3,6 +3,10 @@ import numpy as np
 import cv2
 import torch
 import torch.distributed as dist
+import os
+import imageio
+import torchvision
+from einops import rearrange
 
 
 def count_params(model, verbose=False):
@@ -31,6 +35,12 @@ def instantiate_from_config(config):
         elif config == "__is_unconditional__":
             return None
         raise KeyError("Expected key `target` to instantiate.")
+    
+    print("###########################################################################")
+    #print(get_obj_from_str(config["target"])(**config.get("params", dict())))
+    print(get_obj_from_str(config["target"]))
+    print("###########################################################################")
+
     return get_obj_from_str(config["target"])(**config.get("params", dict()))
 
 
@@ -75,3 +85,17 @@ def setup_dist(args):
         'nccl',
         init_method='env://'
     )
+
+def save_videos_grid(videos: torch.Tensor, path: str, rescale=False, n_rows=6, fps=8):
+    videos = rearrange(videos, "b c t h w -> t b c h w")
+    outputs = []
+    for x in videos:
+        x = torchvision.utils.make_grid(x, nrow=n_rows)
+        x = x.transpose(0, 1).transpose(1, 2).squeeze(-1)
+        if rescale:
+            x = (x + 1.0) / 2.0  # -1,1 -> 0,1
+        x = (x * 255).numpy().astype(np.uint8)
+        outputs.append(x)
+
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    imageio.mimsave(path, outputs, fps=fps)

@@ -1,0 +1,44 @@
+Number of trainable parameters: 1413284420
+Number of mmg_model parameters: 1850970924
+loading annotations from scripts/evaluation/data/audiocaps.csv ...
+data scale: 876
+Processing video 0: {'audiocap_id': '3', 'youtube_id': '--0w1YA1Hm4', 'start_time': '30', 'caption': 'People talking with the dull roar of a vehicle on the road', 'video_Caption': 'In this video, we see a car driving down a street at night. The video lasts for 8 seconds, and we see different objects and their attributes, such as the street, the car, the night, and the road. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 1: {'audiocap_id': '104906', 'youtube_id': '#NAME?', 'start_time': '30', 'caption': 'Plastic crinkling followed by footsteps on concrete as metal clanging and a group of people talk in the background', 'video_Caption': "In this video, we see a person's hand reaching into a plastic container filled with soil. The hand is holding a small plant, and we can see the roots of the plant. The container is placed on a concrete floor. "}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 274: {'audiocap_id': '103869', 'youtube_id': 'DNtF_mGzQes', 'start_time': '30', 'caption': 'A man talking on loudspeakers along with an idling truck and a bustling crowd', 'video_Caption': 'In this video, we see a fire truck arriving at a building, and firefighters getting out to put out a fire. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 2: {'audiocap_id': '102977', 'youtube_id': '#NAME?', 'start_time': '10', 'caption': 'Rain falling and wind blowing hard with rustling leaves', 'video_Caption': 'The video shows a scene of a garden with trees and a house in the background. The camera captures the scene from different angles, showing the rain falling on the garden and the house. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 787: {'audiocap_id': '104495', 'youtube_id': 'rtgVoZCcBw8', 'start_time': '0', 'caption': 'A cat meowing followed by a goat screaming while a crowd of people talk in the background', 'video_Caption': 'In this video, we see a white goat standing behind a wire fence. The goat is eating grass and occasionally looking at the camera. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 3: {'audiocap_id': '106197', 'youtube_id': '#NAME?', 'start_time': '30', 'caption': 'A female speaking', 'video_Caption': 'In this video, a man is standing at a podium and giving a speech. He is wearing a white shirt and black pants. There are several people sitting in chairs behind him, and there are also some potted plants in the room. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 272: {'audiocap_id': '105402', 'youtube_id': 'D9tinq3RMpU', 'start_time': '30', 'caption': 'An engine running and wind with various speech in the background', 'video_Caption': 'In this video, we see a ferry boat carrying cars and people across a body of water. The video shows different angles of the ferry boat and the surrounding area. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Steps:   0%|                                                                                                                                                                                                                       | 0/100 [00:00<?, ?it/s]/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+Traceback (most recent call last):
+  File "scripts/evaluation/train_mmg.py", line 369, in <module>
+    train_mmg(videocrafter_args, gpu_num, rank)
+  File "scripts/evaluation/train_mmg.py", line 273, in train_mmg
+    latents = mmg_model.encode_first_stage_2DAE(pixel_values) #scale factor가 이미 곱해져있음
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/models/ddpm3d.py", line 499, in encode_first_stage_2DAE
+    results = torch.cat([self.get_first_stage_encoding(self.first_stage_model.encode(x[:,:,i])).detach().unsqueeze(2) for i in range(t)], dim=2)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/models/ddpm3d.py", line 499, in <listcomp>
+    results = torch.cat([self.get_first_stage_encoding(self.first_stage_model.encode(x[:,:,i])).detach().unsqueeze(2) for i in range(t)], dim=2)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/models/autoencoder.py", line 99, in encode
+    h = self.encoder(x)
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/modules/networks/ae_modules.py", line 454, in forward
+    h = self.mid.attn_1(h)
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/modules/networks/ae_modules.py", line 66, in forward
+    w_ = torch.bmm(q,k)    # b,hw,hw    w[b,i,j]=sum_c q[b,i,c]k[b,c,j]
+RuntimeError: CUDA error: CUBLAS_STATUS_ALLOC_FAILED when calling `cublasCreate(handle)`

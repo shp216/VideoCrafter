@@ -1,0 +1,10 @@
+Number of trainable parameters: 1413284420
+Number of mmg_model parameters: 1850970924
+loading annotations from scripts/evaluation/data/audiocaps.csv ...
+data scale: 876
+Traceback (most recent call last):
+  File "scripts/evaluation/train_mmg.py", line 253, in <module>
+    train_mmg(videocrafter_args, gpu_num, rank)
+  File "scripts/evaluation/train_mmg.py", line 230, in train_mmg
+    total_batch_size = args.train_batch_size * args.num_processes * args.gradient_accumulation_steps
+AttributeError: 'Namespace' object has no attribute 'num_processes'

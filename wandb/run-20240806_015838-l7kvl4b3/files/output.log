@@ -1,0 +1,36 @@
+Number of trainable parameters: 1413284420
+Number of mmg_model parameters: 1850970924
+loading annotations from scripts/evaluation/data/audiocaps.csv ...
+data scale: 876
+Processing video 0: {'audiocap_id': '3', 'youtube_id': '--0w1YA1Hm4', 'start_time': '30', 'caption': 'People talking with the dull roar of a vehicle on the road', 'video_Caption': 'In this video, we see a car driving down a street at night. The video lasts for 8 seconds, and we see different objects and their attributes, such as the street, the car, the night, and the road. '}
+/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+Traceback (most recent call last):
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/einops/einops.py", line 522, in reduce
+    recipe = _prepare_transformation_recipe(pattern, reduction, axes_names=tuple(axes_lengths), ndim=len(shape))
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/einops/einops.py", line 365, in _prepare_transformation_recipe
+    raise EinopsError(f"Wrong shape: expected {len(left.composition)} dims. Received {ndim}-dim tensor.")
+einops.EinopsError: Wrong shape: expected 5 dims. Received 4-dim tensor.
+During handling of the above exception, another exception occurred:
+Traceback (most recent call last):
+  File "scripts/evaluation/train_mmg.py", line 231, in <module>
+    train_mmg(videocrafter_args, gpu_num, rank)
+  File "scripts/evaluation/train_mmg.py", line 215, in train_mmg
+    for step, batch in enumerate(train_dataloader):
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 634, in __next__
+    data = self._next_data()
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 678, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 51, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../scripts/evaluation/data/dataset.py", line 84, in __getitem__
+    pixel_values = rearrange(pixel_values, "b f c h w -> b c f h w")
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/einops/einops.py", line 591, in rearrange
+    return reduce(tensor, pattern, reduction="rearrange", **axes_lengths)
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/einops/einops.py", line 533, in reduce
+    raise EinopsError(message + "\n {}".format(e))
+einops.EinopsError:  Error while processing rearrange-reduction pattern "b f c h w -> b c f h w".
+ Input tensor shape: torch.Size([16, 3, 256, 256]). Additional info: {}.
+ Wrong shape: expected 5 dims. Received 4-dim tensor.

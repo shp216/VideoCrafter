@@ -30,7 +30,6 @@ from lvdm.common import (
     default
 )
 
-
 __conditioning_keys__ = {'concat': 'c_concat',
                          'crossattn': 'c_crossattn',
                          'adm': 'y'}
@@ -65,6 +64,7 @@ class DDPM(pl.LightningModule):
                  use_positional_encodings=False,
                  learn_logvar=False,
                  logvar_init=0.
+                 
                  ):
         super().__init__()
         assert parameterization in ["eps", "x0"], 'currently only supporting "eps" and "x0"'
@@ -75,7 +75,7 @@ class DDPM(pl.LightningModule):
         self.log_every_t = log_every_t
         self.first_stage_key = first_stage_key
         self.channels = channels
-        self.temporal_length = unet_config.params.temporal_length
+        self.temporal_length = unet_config.params.temporal_length #temporal_length
         self.image_size = image_size 
         if isinstance(self.image_size, int):
             self.image_size = [self.image_size, self.image_size]
@@ -324,7 +324,7 @@ class DDPM(pl.LightningModule):
         return log
 
 
-class LatentDiffusion(DDPM):
+class LatentDiffusion(DDPM, nn.Module):
     """main class"""
     def __init__(self,
                  first_stage_config,
@@ -414,10 +414,10 @@ class LatentDiffusion(DDPM):
         if self.use_scale:  
             return (extract_into_tensor(self.sqrt_alphas_cumprod, t, x_start.shape) * x_start *
                 extract_into_tensor(self.scale_arr, t, x_start.shape) +
-                extract_into_tensor(self.sqrt_one_minus_alphas_cumprod, t, x_start.shape) * noise)
+                extract_into_tensor(self.sqrt_one_minus_alphas_cumprod, t, x_start.shape) * noise), noise
         else:
             return (extract_into_tensor(self.sqrt_alphas_cumprod, t, x_start.shape) * x_start +
-                extract_into_tensor(self.sqrt_one_minus_alphas_cumprod, t, x_start.shape) * noise)
+                extract_into_tensor(self.sqrt_one_minus_alphas_cumprod, t, x_start.shape) * noise), noise
 
 
     def _freeze_model(self):
@@ -442,7 +442,7 @@ class LatentDiffusion(DDPM):
             model = instantiate_from_config(config)
             self.cond_stage_model = model
     
-    def get_learned_conditioning(self, c):
+    def get_learned_conditioning(self, c): # text를 clip embedding태워서 나오게 하기  
         if self.cond_stage_forward is None:
             if hasattr(self.cond_stage_model, 'encode') and callable(self.cond_stage_model.encode):
                 c = self.cond_stage_model.encode(c)
@@ -457,10 +457,11 @@ class LatentDiffusion(DDPM):
 
     def get_first_stage_encoding(self, encoder_posterior, noise=None):
         if isinstance(encoder_posterior, DiagonalGaussianDistribution):
+            
             z = encoder_posterior.sample(noise=noise)
         elif isinstance(encoder_posterior, torch.Tensor):
             z = encoder_posterior
-        else:
+            
             raise NotImplementedError(f"encoder_posterior of type '{type(encoder_posterior)}' not yet implemented")
         return self.scale_factor * z
    
@@ -476,6 +477,12 @@ class LatentDiffusion(DDPM):
         encoder_posterior = self.first_stage_model.encode(x)
         results = self.get_first_stage_encoding(encoder_posterior).detach()
         
+        # print("##########################################################")
+        # print("x.shape: ", x.shape)
+        # print("encoder_posterior.shape: ", encoder_posterior.shape)
+        # print("##########################################################")
+
+        
         if reshape_back:
             results = rearrange(results, '(b t) c h w -> b c t h w', b=b,t=t)
         
@@ -483,6 +490,10 @@ class LatentDiffusion(DDPM):
     
     @torch.no_grad()
     def encode_first_stage_2DAE(self, x):
+        
+        # print("#######################################################")
+        # print("x.shape: ", x.shape)
+        # print("#######################################################")
 
         b, _, t, _, _ = x.shape
         results = torch.cat([self.get_first_stage_encoding(self.first_stage_model.encode(x[:,:,i])).detach().unsqueeze(2) for i in range(t)], dim=2)
@@ -503,6 +514,8 @@ class LatentDiffusion(DDPM):
             
         if reshape_back:
             results = rearrange(results, '(b t) c h w -> b c t h w', b=b,t=t)
+        
+        print("##$#$#$#$#$#$#$#$")
         return results
 
     @torch.no_grad()
@@ -696,20 +709,33 @@ class LatentVisualDiffusion(LatentDiffusion):
 class DiffusionWrapper(pl.LightningModule):
     def __init__(self, diff_model_config, conditioning_key):
         super().__init__()
-        self.diffusion_model = instantiate_from_config(diff_model_config)
+        self.diffusion_model = instantiate_from_config(diff_model_config) #yaml에서 말하고 있는 unet_config
         self.conditioning_key = conditioning_key
 
     def forward(self, x, t, c_concat: list = None, c_crossattn: list = None,
                 c_adm=None, s=None, mask=None, **kwargs):
         # temporal_context = fps is foNone
+
         if self.conditioning_key is None:
             out = self.diffusion_model(x, t)
         elif self.conditioning_key == 'concat':
             xc = torch.cat([x] + c_concat, dim=1)
             out = self.diffusion_model(xc, t, **kwargs)
+            
+            
         elif self.conditioning_key == 'crossattn':
-            cc = torch.cat(c_crossattn, 1)
-            out = self.diffusion_model(x, t, context=cc, **kwargs)
+            cc = torch.cat(c_crossattn, 1) # shape -> [bs,77,1024] cc = c_crossattn[0]과 같은 짓
+            out = self.diffusion_model(x, t, context=cc, **kwargs) # output이 나오는 곳 unet에서
+            
+            # print("###############################################################")
+            # print("x(input).shape: ", x.shape)
+            # print("model_output(out).shape: ", out.shape)
+            # print(x)
+            # print("###############################################################")
+
+            
+            
+            
         elif self.conditioning_key == 'hybrid':
             ## it is just right [b,c,t,h,w]: concatenate in channel dim
             xc = torch.cat([x] + c_concat, dim=1)

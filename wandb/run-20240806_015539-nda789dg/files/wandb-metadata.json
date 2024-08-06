@@ -1,0 +1,199 @@
+{
+    "os": "Linux-6.5.0-44-generic-x86_64-with-glibc2.10",
+    "python": "3.8.5",
+    "heartbeatAt": "2024-08-05T16:55:40.610239",
+    "startedAt": "2024-08-05T16:55:39.773744",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--seed",
+        "123",
+        "--mode",
+        "base",
+        "--ckpt_path",
+        "ckpt/model.ckpt",
+        "--config",
+        "configs/inference_t2v_512_v2.0.yaml",
+        "--config2",
+        "configs/training_t2v_512_v2.0.yaml",
+        "--savedir",
+        "results/base_512_v2",
+        "--n_samples",
+        "1",
+        "--bs",
+        "2",
+        "--height",
+        "128",
+        "--width",
+        "128",
+        "--unconditional_guidance_scale",
+        "12.0",
+        "--ddim_steps",
+        "1",
+        "--ddim_eta",
+        "1.0",
+        "--fps",
+        "28",
+        "--output_dir",
+        "outputs"
+    ],
+    "state": "running",
+    "program": "scripts/evaluation/train_mmg.py",
+    "codePathLocal": "scripts/evaluation/train_mmg.py",
+    "codePath": "scripts/evaluation/train_mmg.py",
+    "git": {
+        "remote": "https://github.com/AILab-CVC/VideoCrafter.git",
+        "commit": "11bcd76fc62fb98b9715b994afe45b4fa081120c"
+    },
+    "email": "qkrtpghks1214@gmail.com",
+    "root": "/home/sehwan/MIIL/VideoCrafter",
+    "host": "sehwan--Ubuntu",
+    "username": "sehwan",
+    "executable": "/home/sehwan/anaconda3/envs/videocrafter/bin/python3",
+    "cpu_count": 16,
+    "cpu_count_logical": 24,
+    "cpu_freq": {
+        "current": 2969.77025,
+        "min": 800.0,
+        "max": 4950.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4090.614,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3831.81,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4198.825,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4197.812,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4191.595,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 3825.189,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4565.844,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 4594.736,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 4193.607,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 4067.428,
+            "min": 800.0,
+            "max": 5400.0
+        },
+        {
+            "current": 4087.114,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4199.189,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 5300.0
+        },
+        {
+            "current": 4182.47,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4186.148,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 4068.881,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 457.3268280029297,
+            "used": 399.7288475036621
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4070 Ti SUPER",
+            "memory_total": 17171480576
+        }
+    ],
+    "memory": {
+        "total": 31.16647720336914
+    }
+}

@@ -34,7 +34,10 @@ class TimestepEmbedSequential(nn.Sequential, TimestepBlock):
     """
 
     def forward(self, x, emb, context=None, batch_size=None):
+        
+        #print(self)
         for layer in self:
+            
             if isinstance(layer, TimestepBlock):
                 x = layer(x, emb, batch_size)
             elif isinstance(layer, SpatialTransformer):
@@ -45,6 +48,7 @@ class TimestepEmbedSequential(nn.Sequential, TimestepBlock):
                 x = rearrange(x, 'b c f h w -> (b f) c h w')
             else:
                 x = layer(x,)
+            
         return x
 
 
@@ -376,6 +380,10 @@ class UNetModel(nn.Module):
                 TimestepEmbedSequential(conv_nd(dims, in_channels, model_channels, 3, padding=1))
             ]
         )
+        # print("###########################################################3")
+        # print("self.input_blocks: ", self.input_blocks)
+        # print("###########################################################3")
+
         if self.addition_attention:
             self.init_attn=TimestepEmbedSequential(
                 TemporalTransformer(
@@ -391,6 +399,8 @@ class UNetModel(nn.Module):
         input_block_chans = [model_channels]
         ch = model_channels
         ds = 1
+
+        #channel_mult -> [1,2,4,4]
         for level, mult in enumerate(channel_mult):
             for _ in range(num_res_blocks):
                 layers = [
@@ -441,6 +451,10 @@ class UNetModel(nn.Module):
                 ch = out_ch
                 input_block_chans.append(ch)
                 ds *= 2
+                
+        # print("###########################################################3")
+        # print("self.input_blocks: ", self.input_blocks)
+        # print("###########################################################3")
 
         if num_head_channels == -1:
             dim_head = ch // num_heads
@@ -476,6 +490,10 @@ class UNetModel(nn.Module):
                 )
         )
         self.middle_block = TimestepEmbedSequential(*layers)
+        
+        # print("###########################################################3")
+        # print("self.middle_blocks: ", self.middle_block)
+        # print("###########################################################3")
 
         self.output_blocks = nn.ModuleList([])
         for level, mult in list(enumerate(channel_mult))[::-1]:
@@ -524,12 +542,16 @@ class UNetModel(nn.Module):
                     )
                     ds //= 2
                 self.output_blocks.append(TimestepEmbedSequential(*layers))
-
+        
+        # print("###########################################################3")
+        # print("self.output_blocks: ", self.output_blocks)
+        # print("###########################################################3")
+        
         self.out = nn.Sequential(
             normalization(ch),
             nn.SiLU(),
             zero_module(conv_nd(dims, model_channels, out_channels, 3, padding=1)),
-        )
+        ) 
 
     def forward(self, x, timesteps, context=None, features_adapter=None, fps=16, **kwargs):
         t_emb = timestep_embedding(timesteps, self.model_channels, repeat_only=False)
@@ -543,17 +565,30 @@ class UNetModel(nn.Module):
 
         b,_,t,_,_ = x.shape
         ## repeat t times for context [(b t) 77 768] & time embedding
+        # print("#################################################################3")
+        # print("context(Before): ", context.shape) #[bs, 77, 768]
         context = context.repeat_interleave(repeats=t, dim=0)
+        # print("context(After): ", context.shape) #[bs*temporal_length, 77, 768]
+        # print("#################################################################")
         emb = emb.repeat_interleave(repeats=t, dim=0)
 
         ## always in shape (b t) c h w, except for temporal layer
-        x = rearrange(x, 'b c t h w -> (b t) c h w')
+        x = rearrange(x, 'b c t h w -> (b t) c h w') 
+        #print("x.shape: ", x.shape)
 
-        h = x.type(self.dtype)
+        h = x.type(self.dtype) #type 변환 
         adapter_idx = 0
         hs = []
+        module_cnt = 0
         for id, module in enumerate(self.input_blocks):
+            # print("#########################################")
+            # print("module:", module )
+            # print("h.shape(Before module): ", h.shape)
+            module_cnt += 1
             h = module(h, emb, context=context, batch_size=b)
+            # print("h.shape(After module): ", h.shape)
+            # print("#########################################")
+
             if id ==0 and self.addition_attention:
                 h = self.init_attn(h, emb, context=context, batch_size=b)
             ## plug-in adapter features
@@ -572,6 +607,7 @@ class UNetModel(nn.Module):
         y = self.out(h)
         
         # reshape back to (b c t h w)
+        
         y = rearrange(y, '(b t) c h w -> b c t h w', b=b)
         return y
     

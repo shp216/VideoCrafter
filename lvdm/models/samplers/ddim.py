@@ -127,7 +127,7 @@ class DDIMSampler(object):
                                                     unconditional_conditioning=unconditional_conditioning,
                                                     verbose=verbose,
                                                     **kwargs)
-        return samples, intermediates
+        return samples, intermediates 
 
     @torch.no_grad()
     def ddim_sampling(self, cond, shape,
@@ -146,6 +146,7 @@ class DDIMSampler(object):
         else:
             img = x_T
         
+
         if timesteps is None:
             timesteps = self.ddpm_num_timesteps if ddim_use_original_steps else self.ddim_timesteps
         elif timesteps is not None and not ddim_use_original_steps:
@@ -190,6 +191,11 @@ class DDIMSampler(object):
                 size=target_size_,
                 mode="nearest",
                 )
+                
+            # print("###############################################################################3")
+            # print("input.shape: ", img.shape)
+            # print("cond: ", cond["c_crossattn"][0].shape)
+            # print("###############################################################################3")
             outs = self.p_sample_ddim(img, cond, ts, index=index, use_original_steps=ddim_use_original_steps,
                                       quantize_denoised=quantize_denoised, temperature=temperature,
                                       noise_dropout=noise_dropout, score_corrector=score_corrector,

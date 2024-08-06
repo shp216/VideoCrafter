@@ -1,0 +1,5 @@
+Number of trainable parameters: 1413284420
+Number of mmg_model parameters: 1850970924
+loading annotations from scripts/evaluation/data/audiocaps.csv ...
+data scale: 876
+Steps:   0%|                                                                                                                                                                  | 0/100 [00:00<?, ?it/s]

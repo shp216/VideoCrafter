@@ -1,0 +1,1324 @@
+Steps:   0%|                                                                                                                                                                                                   | 0/100 [00:00<?, ?it/s]/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torchvision/transforms/functional.py:1603: UserWarning: The default value of the antialias parameter of all the resizing transforms (Resize(), RandomResizedCrop(), etc.) will change from None to True in v0.17, in order to be consistent across the PIL and Tensor backends. To suppress this warning, directly pass antialias=True (recommended, future default), antialias=None (current default, which means False for Tensors and True for PIL), or antialias=False (only works on Tensors - PIL will still use antialiasing). This also applies if you are using the inference transforms from the models weights: update the call to weights.transforms(antialias=True).
+  warnings.warn(
+Number of trainable parameters: 1413284420
+Number of mmg_model parameters: 1850970924
+loading annotations from scripts/evaluation/data/audiocaps.csv ...
+data scale: 876
+Processing video 0: {'audiocap_id': '3', 'youtube_id': '--0w1YA1Hm4', 'start_time': '30', 'caption': 'People talking with the dull roar of a vehicle on the road', 'video_Caption': 'In this video, we see a car driving down a street at night. The video lasts for 8 seconds, and we see different objects and their attributes, such as the street, the car, the night, and the road. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 1: {'audiocap_id': '104906', 'youtube_id': '#NAME?', 'start_time': '30', 'caption': 'Plastic crinkling followed by footsteps on concrete as metal clanging and a group of people talk in the background', 'video_Caption': "In this video, we see a person's hand reaching into a plastic container filled with soil. The hand is holding a small plant, and we can see the roots of the plant. The container is placed on a concrete floor. "}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 274: {'audiocap_id': '103869', 'youtube_id': 'DNtF_mGzQes', 'start_time': '30', 'caption': 'A man talking on loudspeakers along with an idling truck and a bustling crowd', 'video_Caption': 'In this video, we see a fire truck arriving at a building, and firefighters getting out to put out a fire. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 2: {'audiocap_id': '102977', 'youtube_id': '#NAME?', 'start_time': '10', 'caption': 'Rain falling and wind blowing hard with rustling leaves', 'video_Caption': 'The video shows a scene of a garden with trees and a house in the background. The camera captures the scene from different angles, showing the rain falling on the garden and the house. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 787: {'audiocap_id': '104495', 'youtube_id': 'rtgVoZCcBw8', 'start_time': '0', 'caption': 'A cat meowing followed by a goat screaming while a crowd of people talk in the background', 'video_Caption': 'In this video, we see a white goat standing behind a wire fence. The goat is eating grass and occasionally looking at the camera. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 3: {'audiocap_id': '106197', 'youtube_id': '#NAME?', 'start_time': '30', 'caption': 'A female speaking', 'video_Caption': 'In this video, a man is standing at a podium and giving a speech. He is wearing a white shirt and black pants. There are several people sitting in chairs behind him, and there are also some potted plants in the room. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 272: {'audiocap_id': '105402', 'youtube_id': 'D9tinq3RMpU', 'start_time': '30', 'caption': 'An engine running and wind with various speech in the background', 'video_Caption': 'In this video, we see a ferry boat carrying cars and people across a body of water. The video shows different angles of the ferry boat and the surrounding area. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 4: {'audiocap_id': '596', 'youtube_id': '#NAME?', 'start_time': '10', 'caption': 'A bell is ringing', 'video_Caption': 'In this video, a man is seen hanging from a rope in a room with wooden beams on the ceiling. He is pulling himself up using the rope. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 348: {'audiocap_id': '107403', 'youtube_id': 'ItS07xtdi4s', 'start_time': '30', 'caption': 'Rockets igniting followed by footsteps on concrete as multiple vehicle engines run while idle', 'video_Caption': 'In this video, we see a man running across a street in a video game. He is wearing a black jacket and blue jeans. There are several parked cars on the street, and we can see a white car parked on the side of the road. The man is running towards the camera, and we can see a green and white sign in the background. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 5: {'audiocap_id': '625', 'youtube_id': '#NAME?', 'start_time': '21', 'caption': 'Man speaking, rain, thunder', 'video_Caption': 'In this video, we see a man riding a motorcycle on a wet road. There are also several other objects in the video, including a black and white sign, a green and white sign, and a black and white dog. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 163: {'audiocap_id': '105257', 'youtube_id': '7QN3lwOzfdg', 'start_time': '0', 'caption': 'A woman speaks then a man speaks', 'video_Caption': 'In this video, we see a cartoon character of a man holding a red phone to his ear. The video then shows a woman with long hair and a black shirt standing in a field of green grass. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 6: {'audiocap_id': '106763', 'youtube_id': '#NAME?', 'start_time': '50', 'caption': 'A person speaks with distant humming and nearby clinking', 'video_Caption': "In this video, we see a table with various bowls of food and ingredients on it. The camera focuses on the different items on the table, including a blue bowl with meat and a white bowl with food. We also see a person's hand holding a spoon and a bottle of ketchup. "}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 345: {'audiocap_id': '105222', 'youtube_id': 'IdBDl9Wr51A', 'start_time': '10', 'caption': 'Synthesized laser effects and explosions as a man talks followed by a deeper voiced man talking then woman laughing', 'video_Caption': 'The video shows a screenshot of a video game. The content of the video is described in temporal order with each frame caption, object names, and object descriptions with specific locations and sizes. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 7: {'audiocap_id': '107331', 'youtube_id': '#NAME?', 'start_time': '30', 'caption': 'A man laughs and talks with another man sneezing', 'video_Caption': 'In this video, a man is seen chopping down a tree with an axe. He then proceeds to hit the tree with the axe and chop it down. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 341: {'audiocap_id': '104726', 'youtube_id': 'IPfaRF76gVU', 'start_time': '13', 'caption': 'Emergency vehicle racing by with siren and a man yelling', 'video_Caption': 'In this video, we see a yellow fire truck driving down a road. The fire truck passes by a man in an orange vest, and we can see a person in a green shirt standing on the side of the road. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 8: {'audiocap_id': '845', 'youtube_id': '#NAME?', 'start_time': '130', 'caption': 'A man speaks while operating a power tool', 'video_Caption': 'In this video, we see a person using a wood lathe to carve a piece of wood. The person is using a chisel to carve the wood, and we can see the wood shavings being removed from the piece. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 611: {'audiocap_id': '105610', 'youtube_id': 'e2rScj9UyMs', 'start_time': '30', 'caption': 'Doves cooing quietly', 'video_Caption': 'In this video, we see a group of pigeons in a cage. They are sitting on a red bowl, and there is a white wall behind them. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 9: {'audiocap_id': '104326', 'youtube_id': '#NAME?', 'start_time': '0', 'caption': 'Clicks of weapons being loaded followed by a gunshot and a clink then a man speaks', 'video_Caption': 'The video shows a man wearing a suit and tie standing in front of a large truck. He is holding a gun and appears to be aiming it at something. The video then shows a series of screenshots from a video game, featuring a man in a suit and tie holding a gun. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 71: {'audiocap_id': '106242', 'youtube_id': '2a6GNu6uCDE', 'start_time': '30', 'caption': 'A woman talking in an auditorium', 'video_Caption': 'In this video, we see a woman standing on a stage in front of a large screen. She is wearing a red shirt and a black and white skirt. The woman is standing still and appears to be giving a presentation or speech. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 10: {'audiocap_id': '1040', 'youtube_id': '#NAME?', 'start_time': '10', 'caption': 'Woman speaking to meowing cat', 'video_Caption': 'In this video, we see a cat eating food out of a bowl. The camera zooms in on the cat, and then the cat looks up at the camera. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 323: {'audiocap_id': '103322', 'youtube_id': 'GuizRlAQ8qQ', 'start_time': '50', 'caption': 'High pitched continuous drilling that slows down', 'video_Caption': 'In this video, we see a man using a tool to work on a wall. He is wearing a black shirt and is seen holding the tool in his hand. The video lasts for 8 seconds, and the man is seen working on the wall for the entire duration. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 11: {'audiocap_id': '1167', 'youtube_id': '-R69Fa-mCaY', 'start_time': '20', 'caption': 'Sound of cutting with a chainsaw with a little pause and again followed by the same sound', 'video_Caption': 'In this video, we see a man sitting on a log and using a chainsaw to cut down a tree. He then proceeds to cut up the tree and chop it into smaller pieces. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 12: {'audiocap_id': '104862', 'youtube_id': '#NAME?', 'start_time': '30', 'caption': 'A car passes by shortly after a man starts talking', 'video_Caption': 'In this video, we see a man standing next to a white van. He is wearing a yellow jacket and is holding a piece of paper. He then proceeds to cut the paper with a knife. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 21: {'audiocap_id': '102775', 'youtube_id': '0G7rb74R-2A', 'start_time': '30', 'caption': 'A man speaking on a microphone as a crowd of people laugh followed by dinner plates clacking', 'video_Caption': 'In this video, a man is standing at a podium with a microphone. He is wearing a white shirt and a black tie. There is a bouquet of white flowers on the table in front of him. The man is speaking into the microphone. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 13: {'audiocap_id': '105362', 'youtube_id': '#NAME?', 'start_time': '20', 'caption': 'Someone belches very loudly two times', 'video_Caption': 'In this video, we see a young man wearing a black shirt. He is making different facial expressions and gestures towards the camera. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 440: {'audiocap_id': '102910', 'youtube_id': 'PYP-r0nvbFk', 'start_time': '30', 'caption': 'A man yelling while a sheep talks as wind blows into a microphone and a helicopter flies in the distance', 'video_Caption': 'In this video, we see a herd of sheep grazing in a green field. The sheep are moving around and eating the grass. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 14: {'audiocap_id': '1577', 'youtube_id': '#NAME?', 'start_time': '60', 'caption': 'The sound of horn from a car approaching from a distance', 'video_Caption': "The video shows a car driving down a road in a tunnel. The car is seen driving through the tunnel, and the video captures the car's movement in different frames. "}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 488: {'audiocap_id': '105723', 'youtube_id': 'Td2EEDdFlRY', 'start_time': '10', 'caption': 'A man talking followed by footsteps on gravel as guitar music is playing', 'video_Caption': 'In this video, a man in a suit is talking to a woman in front of a house. They are joined by another man who plays the guitar. The man in the suit then proceeds to play the guitar as well. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 15: {'audiocap_id': '105818', 'youtube_id': '#NAME?', 'start_time': '17', 'caption': 'A car engine accelerating and then laughter', 'video_Caption': 'In this video, we see a car driving down a road with other cars and trees in the background. The video shows the car driving on the road and passing by other cars and trees. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 480: {'audiocap_id': '103098', 'youtube_id': 'T32kii824pA', 'start_time': '240', 'caption': 'A man talking as metal rattles then clanks followed by several metal objects falling over onto a hard surface', 'video_Caption': 'In this video, a person is seen using a tool to fix a piece of wood. They are shown using the tool to tighten a screw and then using it again to loosen the screw. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 16: {'audiocap_id': '104631', 'youtube_id': '#NAME?', 'start_time': '30', 'caption': 'Engine running steadily', 'video_Caption': 'In this video, we see a machine in a field. The machine is a large piece of equipment that is used for farming. Throughout the video, we see the machine in different positions and orientations. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 623: {'audiocap_id': '104803', 'youtube_id': 'eqcdsdLz954', 'start_time': '21', 'caption': 'A synthesized explosion followed by a popping explosion and fire crackling then gusts of wind blowing', 'video_Caption': 'In this video, we see a book on fire in the desert. The flames are visible, and the book is burning. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 17: {'audiocap_id': '106656', 'youtube_id': '#NAME?', 'start_time': '30', 'caption': 'An engine revving and then tires squealing', 'video_Caption': 'In this video, a car is seen driving around a track with cones while people watch on the sides. The car continues to drive around the track, and the people on the sides continue to watch. '}
+Video file scripts/evaluation/data/test_trimmed_audiocaps/audiocaps_#NAME?.mp4 not found.
+Processing video 539: {'audiocap_id': '103499', 'youtube_id': 'YH4qi8Ul6v0', 'start_time': '30', 'caption': 'A man talking as an infant is crying followed by a man humming', 'video_Caption': 'In this video, we see a man sitting in a chair holding a baby. The man is wearing a blue shirt and glasses, and he is sitting in a brown chair with a fireplace in the background. The baby is wearing a white shirt, and the man is holding the baby in his arms. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 18: {'audiocap_id': '102789', 'youtube_id': '096oTVzc5Gs', 'start_time': '30', 'caption': 'A woman talking as a dog growls followed by a fan blowing air', 'video_Caption': 'In this video, we see a dog and a cat sitting on a couch. The dog is brown and white, and the cat is white. The dog is sitting on the left side of the couch, and the cat is sitting on the right side. The couch is white, and there is a white blanket on the couch as well. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 19: {'audiocap_id': '103756', 'youtube_id': '0AsXkZkqelg', 'start_time': '30', 'caption': 'An idle vehicle engine running normally before stuttering', 'video_Caption': 'In this video, we see a man standing in front of a car in a garage. The video then shows the same man standing in front of the car in the garage. Later, we see the man standing in front of the car again in the garage. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 20: {'audiocap_id': '106742', 'youtube_id': '0Dt-pH0pW-Y', 'start_time': '20', 'caption': 'A motorcycle driving then accelerating as a man talks over an intercom followed by another man cheering', 'video_Caption': 'In this video, a young boy is seen riding a dirt bike around a track, while a man follows behind him. The boy continues to ride around the track, and the man is always close behind. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 21: {'audiocap_id': '102775', 'youtube_id': '0G7rb74R-2A', 'start_time': '30', 'caption': 'A man speaking on a microphone as a crowd of people laugh followed by dinner plates clacking', 'video_Caption': 'In this video, a man is standing at a podium with a microphone. He is wearing a white shirt and a black tie. There is a bouquet of white flowers on the table in front of him. The man is speaking into the microphone. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 22: {'audiocap_id': '3452', 'youtube_id': '0NGSrwioYjA', 'start_time': '30', 'caption': 'There is a mature male talking to some animals', 'video_Caption': 'In this video, we see a baby lamb standing on a grassy field. The lamb is seen standing and walking around in the grass. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 23: {'audiocap_id': '106395', 'youtube_id': '0On6-JiVwRs', 'start_time': '100', 'caption': 'A cat meowing as wind blows into a microphone', 'video_Caption': 'In this video, we see a black cat and a brown and black cat sitting on a tiled floor. The black cat is sitting on the left side of the frame, while the brown and black cat is sitting on the right side. The cats are not moving, and there are no other objects or actions in the video. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 24: {'audiocap_id': '105236', 'youtube_id': '0Rpjl1AO-P0', 'start_time': '30', 'caption': 'Car engine accelerates and shifts gears', 'video_Caption': 'In this video, we see a car race on a track. The cars are driving at high speed, and some of them crash into each other. The video captures the intense moments of the race, including the crashes and the aftermath. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 25: {'audiocap_id': '3944', 'youtube_id': '0_K6OKtoBBU', 'start_time': '30', 'caption': 'A cat is meowing', 'video_Caption': 'In this video, we see a cat sitting in front of a door. The cat remains in the same position throughout the video. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 26: {'audiocap_id': '103054', 'youtube_id': '0_ogYGDGDco', 'start_time': '60', 'caption': 'A boat is traveling while water is splashing with wind noise, and a man is speaking on a two-way radio', 'video_Caption': 'The video shows a kayak moving through rough waters in the ocean. The camera is positioned at the back of the kayak, and we can see the water splashing around the kayak. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 27: {'audiocap_id': '3988', 'youtube_id': '0a9wVat2PWk', 'start_time': '230', 'caption': 'Train horn sounds as it moves along tracks', 'video_Caption': 'The video shows a series of images of a train traveling through a forest. The images are captured from different angles and show different parts of the train and the surrounding environment. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 28: {'audiocap_id': '4210', 'youtube_id': '0fMXnvD38zI', 'start_time': '50', 'caption': 'Water flows and wind flows with seagulls in the distance', 'video_Caption': "In this video, we see a large sailing ship on the water. The ship is sailing in the ocean with other sailing ships. The sky is cloudy, and the water is calm. We can see the ship's sails, masts, and rigging. "}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 29: {'audiocap_id': '103131', 'youtube_id': '0jGH7A_hpBM', 'start_time': '30', 'caption': 'A man narrating followed by another man speaking then speaking through a television speaker', 'video_Caption': 'In this video, we see a man wearing a suit and tie standing in front of a crowd of people. He is holding a blue bag and appears to be talking to the crowd. The video then shows a man in a military uniform standing in front of a crowd of people. He is also holding a blue bag and appears to be talking to the crowd. The video then shows a man in a suit and tie standing in front of a crowd of people. He is holding a blue bag and appears to be talking to the crowd. The video then shows a man in a suit and tie standing in front of a crowd of people. He is holding a blue bag and appears to be talking to the crowd. The video then shows a man in a suit and tie standing in front of a crowd of people. He is holding a blue bag and appears to be talking to the crowd. Finally, the video shows a man in a suit and tie standing in front of a crowd of people. He is holding a blue bag and appears to be talking to the crowd. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 30: {'audiocap_id': '4626', 'youtube_id': '0qbHT34qTZE', 'start_time': '50', 'caption': 'A man speaks then a sudden explosion which is followed by smaller explosions and thunder', 'video_Caption': 'In this video, we see a screenshot of a video game. The video shows various objects such as a ship, a video game, a screenshot, and a game. The video also shows different scenes, including a large body of water, a wooden dock, and a large wooden boat. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 31: {'audiocap_id': '103837', 'youtube_id': '0rSETXszQM0', 'start_time': '100', 'caption': 'Plastic clacking followed by a motorbike and a motorcycle engine starting up then accelerating', 'video_Caption': 'In this video, we see two men standing next to their motorcycles. They are wearing helmets and seem to be preparing for a ride. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 32: {'audiocap_id': '4811', 'youtube_id': '0ury8KHQdL4', 'start_time': '480', 'caption': 'An adult male is speaking and typing on a keyboard', 'video_Caption': 'The video is a screenshot of a game on a computer screen. The game is shown on the screen throughout the video. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 33: {'audiocap_id': '107223', 'youtube_id': '0yETgW44MZU', 'start_time': '20', 'caption': 'A train horn honking as a train runs on railroad tracks and birds chirping', 'video_Caption': 'In this video, we see a train traveling down the tracks. The train is blue and white and has black smoke coming out of the engine. The video shows the train moving along the tracks, passing by trees and other scenery. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 34: {'audiocap_id': '105724', 'youtube_id': '0yxEvdnimGg', 'start_time': '30', 'caption': 'Dogs barking and muffled speech', 'video_Caption': 'In this video, we see a dog running around a field and chasing after a ball. The dog continues to run around the field, and we see a person walking in the field. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 35: {'audiocap_id': '103217', 'youtube_id': '11SEBDuoqSk', 'start_time': '50', 'caption': 'An engine chugging loudly together with gunfire', 'video_Caption': 'In this video, we see a small plane flying in the sky. The video lasts for 8 seconds, and the plane is visible throughout the video. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 36: {'audiocap_id': '104800', 'youtube_id': '13CBvjHZhOA', 'start_time': '29', 'caption': 'Knocking sounds as race cars pass by', 'video_Caption': 'In this video, we see a person driving a car with a green helmet on. The video lasts for 8 seconds, and we see the person driving the car throughout the video. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 37: {'audiocap_id': '102858', 'youtube_id': '14ekd4nkpwc', 'start_time': '28', 'caption': 'Baby crying and person tapping his mouth', 'video_Caption': 'In this video, we see a baby crying in the arms of a man. The baby is wearing a blue shirt and has black hair. The man is holding the baby in his arms and appears to be trying to soothe the baby. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 38: {'audiocap_id': '5211', 'youtube_id': '14izd_i3ryE', 'start_time': '30', 'caption': 'Wind rushes by, a motorcycle sounds, a man speaks', 'video_Caption': 'In this video, we see a man riding a horse-drawn carriage down a street. The video shows the carriage moving along the street, passing by other vehicles and people. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 39: {'audiocap_id': '5548', 'youtube_id': '1DKLyH3FixM', 'start_time': '100', 'caption': 'Birds are chirping', 'video_Caption': 'In this video, we see a cartoon of a young boy walking through a forest. He is wearing a blue shirt and is walking on a path. We can see trees and bushes in the background. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 40: {'audiocap_id': '106329', 'youtube_id': '1FNJbN-eHY4', 'start_time': '30', 'caption': 'A crowd murmuring with several belches followed by laughter', 'video_Caption': 'The video shows a group of women gathered around a table, laughing and drinking soda. They are also playing a game where they try to drink from a straw without using their hands. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 41: {'audiocap_id': '106238', 'youtube_id': '1GgEpRZDWN0', 'start_time': '410', 'caption': 'Female and male are having conversation', 'video_Caption': "In this video, we see a man and a woman sitting in chairs and talking to each other. They are in a kitchen, and there is a small dog on the man's lap. The man is wearing a yellow shirt, and the woman is wearing a white shirt. They seem to be having a conversation while the dog is sitting on the man's lap. "}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 42: {'audiocap_id': '103088', 'youtube_id': '1HCuBnPLMqQ', 'start_time': '380', 'caption': 'Trickling water sounds with breathing in the background', 'video_Caption': 'In this video, a man is seen standing next to a beehive, and he is holding a yellow bucket. He is also wearing a blue shirt and blue jeans. The video lasts for 8 seconds, and it shows the man standing in front of the beehive. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 43: {'audiocap_id': '106643', 'youtube_id': '1IoHRTUp86c', 'start_time': '70', 'caption': 'An aircraft engine humming as a woman speaks over an intercom followed by an aircraft engine accelerating', 'video_Caption': 'In this video, we see a person flying over a field in an airplane. The video shows different angles of the field and the airplane, with the sky and clouds visible in the background. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 44: {'audiocap_id': '5873', 'youtube_id': '1L_OyngNZMA', 'start_time': '30', 'caption': 'A man speaks into an echoing, a crowd laughs and cheers', 'video_Caption': 'In the video, a man is playing a guitar on stage while singing. He is accompanied by other men who are also singing and playing guitars. The crowd is cheering and clapping for them. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 45: {'audiocap_id': '107002', 'youtube_id': '1N_DtRpdAp8', 'start_time': '6', 'caption': 'Clicking and humming of a revving idling engine', 'video_Caption': 'In this video, we see a close-up shot of a car engine with a fuel pump. The camera focuses on the fuel pump, and we can see the engine and other parts of the car in the background. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 46: {'audiocap_id': '105423', 'youtube_id': '1Og2TJ3bXW0', 'start_time': '20', 'caption': 'An aircraft engine running then slowing down after a plastic click', 'video_Caption': 'In this video, we see a series of images of an airport runway and tarmac. The video starts with a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac in the background. The video then shows a view of the runway from the window of an airplane. We can see the wing of the airplane and the runway in the background. The video then shows a view of the tarmac from the window of an airplane. We can see the wing of the airplane and the tarmac'}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 47: {'audiocap_id': '6046', 'youtube_id': '1PvMtRIlZNI', 'start_time': '0', 'caption': 'Water gurgling', 'video_Caption': "In this video, we see a person washing their hands in a sink. The video lasts for 8 seconds, and we can see the person's hand moving around in the sink. "}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 48: {'audiocap_id': '103099', 'youtube_id': '1QNLMF-Kl_s', 'start_time': '30', 'caption': 'A woman delivering a speech', 'video_Caption': 'In this video, we see a woman making a funny face at the camera. She is wearing a black and white shirt and has long blonde hair. She is standing in front of a wooden door with a silver handle. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 49: {'audiocap_id': '6223', 'youtube_id': '1Uh74_rZ72k', 'start_time': '30', 'caption': 'Wind is blowing and water gurgles', 'video_Caption': 'The video shows a person riding down a blue water slide in an amusement park. The person is seen going down the slide and passing through a green tunnel. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 50: {'audiocap_id': '104745', 'youtube_id': '1WTSW96XP6E', 'start_time': '180', 'caption': 'A man is speaking followed by a tap and motorcycle turning on', 'video_Caption': "In this video, we see a close-up shot of a motorcycle with a person's hand on the handlebars. The camera then zooms in on the motorcycle, and we see a person's hand on the handlebars again. This happens a few times throughout the video. "}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 51: {'audiocap_id': '106783', 'youtube_id': '1_z6NcidGzM', 'start_time': '30', 'caption': 'Various speech and a whistle blown and water splashing', 'video_Caption': 'In this video, we see a woman swimming in a pool. She is seen swimming underwater and then comes up to the surface. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 52: {'audiocap_id': '105572', 'youtube_id': '1a2XWJ8NA_Q', 'start_time': '30', 'caption': 'An engine running and wind blowing with people talking', 'video_Caption': 'In this video, we see a group of people on a boat, with a woman in a bikini dancing on the back of the boat. The camera pans around to show the people on the boat and the scenery around them. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 53: {'audiocap_id': '106757', 'youtube_id': '1e98HeU9Vrg', 'start_time': '20', 'caption': 'Waves and wind rake a shore', 'video_Caption': 'In this video, we see a bottle of water on the beach near the ocean. The video shows the bottle from different angles and distances, and we can see the waves of the ocean in the background. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 54: {'audiocap_id': '104420', 'youtube_id': '1ed87LLY97k', 'start_time': '30', 'caption': 'Hissing with some faint bangs', 'video_Caption': 'In this video, we see a bedroom with a bed, a lamp, and a ceiling fan. The camera is focused on the bed, and we can see a white cat lying on it. The room is dimly lit, and the ceiling fan is rotating slowly. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 55: {'audiocap_id': '104625', 'youtube_id': '1j5NMuq1X30', 'start_time': '30', 'caption': 'A motor engine humming as liquid sprays and music plays in the background', 'video_Caption': 'In this video, a man is seen spraying down a wall inside a house. He continues to spray the wall while kneeling down. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 56: {'audiocap_id': '106668', 'youtube_id': '1nUOGZgSzZo', 'start_time': '30', 'caption': 'Wind blowing and water splashing', 'video_Caption': 'In this video, a person is seen inside a large hamster ball, rolling around in a pool. The person continues to roll around in the ball while the camera captures their movements. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 57: {'audiocap_id': '104655', 'youtube_id': '1slvoNgzBLE', 'start_time': '160', 'caption': 'A subway train signal plays followed by a bell chiming followed by a horn honking as a crowd of people talk in the background', 'video_Caption': 'In this video, we see a train stopped at a station. We can see the train, the station, and people walking on the platform. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 58: {'audiocap_id': '7294', 'youtube_id': '1vCYiVvZ7VE', 'start_time': '30', 'caption': 'A woman is giving a speech', 'video_Caption': 'In this video, we see a woman standing in front of a television screen. The television screen displays various images and signs, including a red and white sign, a red and white sign with white letters, and a red and white sign with black letters. The woman is wearing a blue shirt, and she is standing in front of a black wall. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 59: {'audiocap_id': '104554', 'youtube_id': '1wW0YJQ-Xa0', 'start_time': '370', 'caption': 'A person coughing followed by a series of compressed air sprays as tin and plastic rattle then a man speaking as a crowd of people talk in the background', 'video_Caption': 'In this video, a man is seen spray painting a picture on a canvas. He is using a spray can to create an abstract design on the canvas. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 60: {'audiocap_id': '106931', 'youtube_id': '22L_3pBa1AI', 'start_time': '18', 'caption': 'A car engine revs as it passes by', 'video_Caption': 'In this video, we see a small car driving down a winding road. The car is white and has a black roof. The road is surrounded by trees and there is a yellow line painted on the road. The car is driving on the road and we can see the road winding through the trees. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 61: {'audiocap_id': '103281', 'youtube_id': '27HIamF8pKo', 'start_time': '110', 'caption': 'A train engine is operating, rhythmic vibrating, clacking and clattering are ongoing, and a train whistle blows three times', 'video_Caption': 'In this video, we can see a green train on the tracks. The video shows the train moving along the tracks, passing by trees and a green bush. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 62: {'audiocap_id': '103771', 'youtube_id': '2ABngPM3raQ', 'start_time': '30', 'caption': 'A man talking as music is playing followed by a frog croaking', 'video_Caption': 'In this video, we see a red and black frog sitting on a green leaf. The frog is the main focus of the video, and we see it in different positions and angles. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 63: {'audiocap_id': '107316', 'youtube_id': '2ErfX6ZT5pM', 'start_time': '0', 'caption': 'A toilet flushes as music plays in the distance', 'video_Caption': 'In this video, we see a toilet in a bathroom. The camera focuses on the toilet, and we can see water swirling around in the bowl. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 64: {'audiocap_id': '102898', 'youtube_id': '2EsxcKe1A4w', 'start_time': '28', 'caption': 'A dog barks with distant birds chirping then people speak', 'video_Caption': 'In this video, we can see a mailbox with the number 144 on it. The video then shows a person walking on the sidewalk, and later, a person riding a skateboard down the street. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 65: {'audiocap_id': '104352', 'youtube_id': '2JV3emH50XU', 'start_time': '0', 'caption': 'A vehicle accelerating in the distance then driving by', 'video_Caption': 'In this video, we see a car driving down a road in a forest. The video lasts for 8 seconds, and it shows the car moving through different parts of the forest. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 66: {'audiocap_id': '105862', 'youtube_id': '2JutOgAnqWA', 'start_time': '120', 'caption': 'A power tool with an electric motor is used for drilling', 'video_Caption': 'In this video, a person is using a drill press to drill a hole in a metal bracket. They are holding the bracket in place with one hand while using the other hand to guide the drill bit. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 67: {'audiocap_id': '105657', 'youtube_id': '2KEfkDO6hlA', 'start_time': '30', 'caption': 'Several motor vehicles accelerating', 'video_Caption': "In this video, we see a car driving down a road with a person in the driver's seat. The video shows different scenes of the car driving on the road, passing by other cars and objects. "}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 68: {'audiocap_id': '104146', 'youtube_id': '2KR0C5ysO8o', 'start_time': '30', 'caption': 'A mid-size motor vehicle engine accelerates and is accompanied by hissing and spinning tires, then it decelerates and an adult male begins to speak', 'video_Caption': 'In this video, we see a car driving through a muddy path in the woods. The car is surrounded by trees, and the path is covered in mud. The car is driving slowly, and we can see the wheels spinning as it moves forward. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 69: {'audiocap_id': '105462', 'youtube_id': '2RjqBRzmxaM', 'start_time': '30', 'caption': 'A female speech, music and rainfall', 'video_Caption': 'In this video, we see a car driving down a street at night. The video lasts for 8 seconds, and we see different objects and scenes in each second of the video. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 70: {'audiocap_id': '8690', 'youtube_id': '2UNuMbxz9ds', 'start_time': '22', 'caption': 'A vehicle engine is revving up', 'video_Caption': 'In this video, we see a black car driving in a parking lot and then driving on the street. The car is seen from different angles, and we also see a yellow car and a white van in the background. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 71: {'audiocap_id': '106242', 'youtube_id': '2a6GNu6uCDE', 'start_time': '30', 'caption': 'A woman talking in an auditorium', 'video_Caption': 'In this video, we see a woman standing on a stage in front of a large screen. She is wearing a red shirt and a black and white skirt. The woman is standing still and appears to be giving a presentation or speech. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 72: {'audiocap_id': '106637', 'youtube_id': '2ceUOv8A3FE', 'start_time': '20', 'caption': 'Honking of horns of an oncoming train', 'video_Caption': 'In this video, we see a train traveling down the tracks. We can see the train moving from left to right in the video. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 73: {'audiocap_id': '103222', 'youtube_id': '2j8pxiFvElM', 'start_time': '0', 'caption': 'A cat meowing twice', 'video_Caption': 'In this video, we see a white cat with blue eyes lying on a bed and looking at the camera. Then, we see the same cat on the ground, followed by a white cat with a blue nose on the ground. After that, we see a white cat with a blue nose on the ground again, followed by a white cat with a blue nose on the ground. Finally, we see a white cat with a blue nose on the ground again. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 74: {'audiocap_id': '105062', 'youtube_id': '2msevPMQB4M', 'start_time': '10', 'caption': 'A drilling sound with humming in the background', 'video_Caption': 'The video shows a machine cutting a piece of wood. The machine is shown in different frames, and the wood is being cut in various ways. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 75: {'audiocap_id': '106870', 'youtube_id': '2sZhC_mKeic', 'start_time': '30', 'caption': 'A car meows and a woman speaks', 'video_Caption': 'In this video, we see a cat sitting on a windowsill, looking out of the window. The cat then jumps up on the windowsill and looks out of the window again. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 76: {'audiocap_id': '102919', 'youtube_id': '2t82STv2GR8', 'start_time': '110', 'caption': 'Several church bells ringing', 'video_Caption': 'The video shows a church with a bell inside. The bell is seen hanging from a wooden structure, and it is rung several times throughout the video. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 77: {'audiocap_id': '105824', 'youtube_id': '2ymiXjImwGs', 'start_time': '9', 'caption': 'A fire siren with people talking', 'video_Caption': 'The video shows a busy street with cars, buses, and people walking on the sidewalk. The camera captures different angles of the street, showing the movement of vehicles and pedestrians. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 78: {'audiocap_id': '102971', 'youtube_id': '30D1tqNFHMc', 'start_time': '30', 'caption': 'A loud engine roars followed by four loud beeps.', 'video_Caption': 'In this video, we see a forest with trees and leaves blowing in the wind. The camera then pans to a road in the woods, and we see a truck driving down the road. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 79: {'audiocap_id': '10037', 'youtube_id': '32565FEuksc', 'start_time': '30', 'caption': 'A woman gives a speech and a crowd claps', 'video_Caption': 'In this video, we see a woman standing at a podium and giving a speech. She is wearing a pink shirt and holding a microphone. The video lasts for 8 seconds, and we see the woman speaking at the podium throughout the video. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 80: {'audiocap_id': '106185', 'youtube_id': '350OCezayrk', 'start_time': '30', 'caption': 'An engine being turned over and then started', 'video_Caption': 'In this video, we can see a car with its hood open. The video shows the engine of the car, and we can see different parts of the engine, such as the radiator, the fan, and the battery. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 81: {'audiocap_id': '106653', 'youtube_id': '35b9BSmN5JM', 'start_time': '1', 'caption': 'A wooden thud as an idle car engine runs then accelerates', 'video_Caption': 'The video shows a car with its hood open, revealing the engine. The camera focuses on the engine and the hood of the car. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 82: {'audiocap_id': '103114', 'youtube_id': '3IScngdQA4I', 'start_time': '8', 'caption': 'Some groaning followed by a woman speaking', 'video_Caption': 'In this video, a woman is seen standing in front of a red wall, smiling and brushing her teeth. She then walks towards a group of people and continues to brush her teeth while laughing. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 83: {'audiocap_id': '105882', 'youtube_id': '3MoF8myFs8Y', 'start_time': '0', 'caption': 'Ocean waves crashing as a man talks in the distance and wind heavily blows into a microphone', 'video_Caption': 'In this video, we see a person riding a wakeboard in the ocean. The person is being pulled by a kite and is riding the waves. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+############################################
+diagonal!!
+############################################
+Processing video 84: {'audiocap_id': '103834', 'youtube_id': '3RultJjvTWI', 'start_time': '400', 'caption': 'Water splashing with speech and brief laughter', 'video_Caption': 'In this video, we can see a group of people riding in a raft down a river. They pass by a large waterfall and continue on their way. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 85: {'audiocap_id': '11080', 'youtube_id': '3Sml1wHcuxo', 'start_time': '40', 'caption': 'A train horn goes off loudly', 'video_Caption': 'In this video, we can see a train traveling on a track. The train is red and yellow, and it has a red and yellow engine. The train is moving from left to right, and we can see it passing by a building and a sign. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 86: {'audiocap_id': '106720', 'youtube_id': '3VHpLxtd498', 'start_time': '30', 'caption': 'Humming with coos of pigeons and brief distant speaking', 'video_Caption': 'In this video, we see a group of white pigeons and a black and white bird walking around on the ground. The video lasts for 8 seconds, and we see the birds moving around and interacting with each other. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+Processing video 87: {'audiocap_id': '106267', 'youtube_id': '3XcIVh40pTI', 'start_time': '10', 'caption': 'A few loud snores', 'video_Caption': 'In this video, we see a little girl sleeping peacefully on a bed. She is wearing a brown shirt and has blonde hair. The camera focuses on her face, and we can see her sleeping peacefully. '}
+pixel_values.shape:  torch.Size([3, 16, 256, 256])
+#######################################################
+x.shape:  torch.Size([4, 3, 16, 256, 256])
+#######################################################
+############################################
+diagonal!!
+############################################
+Traceback (most recent call last):
+  File "scripts/evaluation/train_mmg.py", line 357, in <module>
+    train_mmg(videocrafter_args, gpu_num, rank)
+  File "scripts/evaluation/train_mmg.py", line 273, in train_mmg
+    latents = mmg_model.encode_first_stage_2DAE(pixel_values) #scale factor가 이미 곱해져있음
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/models/ddpm3d.py", line 505, in encode_first_stage_2DAE
+    results = torch.cat([self.get_first_stage_encoding(self.first_stage_model.encode(x[:,:,i])).detach().unsqueeze(2) for i in range(t)], dim=2)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/models/ddpm3d.py", line 505, in <listcomp>
+    results = torch.cat([self.get_first_stage_encoding(self.first_stage_model.encode(x[:,:,i])).detach().unsqueeze(2) for i in range(t)], dim=2)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/models/autoencoder.py", line 99, in encode
+    h = self.encoder(x)
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/modules/networks/ae_modules.py", line 447, in forward
+    hs.append(self.down[i_level].downsample(hs[-1]))
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sehwan/MIIL/VideoCrafter/scripts/evaluation/../../lvdm/modules/networks/ae_modules.py", line 106, in forward
+    x = self.conv(x)
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 463, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/sehwan/anaconda3/envs/videocrafter/lib/python3.8/site-packages/torch/nn/modules/conv.py", line 459, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+KeyboardInterrupt
+############################################
+diagonal!!
+############################################

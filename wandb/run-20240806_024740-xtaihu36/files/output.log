@@ -1,0 +1,10 @@
+Number of trainable parameters: 1413284420
+Number of mmg_model parameters: 1850970924
+loading annotations from scripts/evaluation/data/audiocaps.csv ...
+data scale: 876
+Traceback (most recent call last):
+  File "scripts/evaluation/train_mmg.py", line 253, in <module>
+    train_mmg(videocrafter_args, gpu_num, rank)
+  File "scripts/evaluation/train_mmg.py", line 243, in train_mmg
+    progress_bar = tqdm(range(global_step, args.max_train_steps), disable=not args.is_main_process)
+AttributeError: 'Namespace' object has no attribute 'is_main_process'

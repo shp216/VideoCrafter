@@ -1,0 +1,199 @@
+2024-08-06 04:09:36,533 INFO    StreamThr :74883 [internal.py:wandb_internal():85] W&B internal server running at pid: 74883, started at: 2024-08-06 04:09:36.532269
+2024-08-06 04:09:36,533 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: status
+2024-08-06 04:09:36,544 INFO    WriterThread:74883 [datastore.py:open_for_write():87] open: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/run-ip9ffclk.wandb
+2024-08-06 04:09:36,544 DEBUG   SenderThread:74883 [sender.py:send():379] send: header
+2024-08-06 04:09:36,635 DEBUG   SenderThread:74883 [sender.py:send():379] send: run
+2024-08-06 04:09:38,714 INFO    SenderThread:74883 [dir_watcher.py:__init__():211] watching files in: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files
+2024-08-06 04:09:38,714 INFO    SenderThread:74883 [sender.py:_start_run_threads():1188] run started: ip9ffclk with start time 1722884976.53222
+2024-08-06 04:09:38,722 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: check_version
+2024-08-06 04:09:38,722 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: check_version
+2024-08-06 04:09:38,772 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: run_start
+2024-08-06 04:09:38,809 DEBUG   HandlerThread:74883 [system_info.py:__init__():26] System info init
+2024-08-06 04:09:38,809 DEBUG   HandlerThread:74883 [system_info.py:__init__():41] System info init done
+2024-08-06 04:09:38,809 INFO    HandlerThread:74883 [system_monitor.py:start():194] Starting system monitor
+2024-08-06 04:09:38,809 INFO    SystemMonitor:74883 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-08-06 04:09:38,810 INFO    HandlerThread:74883 [system_monitor.py:probe():214] Collecting system info
+2024-08-06 04:09:38,810 INFO    SystemMonitor:74883 [interfaces.py:start():188] Started cpu monitoring
+2024-08-06 04:09:38,811 INFO    SystemMonitor:74883 [interfaces.py:start():188] Started disk monitoring
+2024-08-06 04:09:38,816 INFO    SystemMonitor:74883 [interfaces.py:start():188] Started gpu monitoring
+2024-08-06 04:09:38,820 INFO    SystemMonitor:74883 [interfaces.py:start():188] Started memory monitoring
+2024-08-06 04:09:38,822 INFO    SystemMonitor:74883 [interfaces.py:start():188] Started network monitoring
+2024-08-06 04:09:38,834 DEBUG   HandlerThread:74883 [system_info.py:probe():152] Probing system
+2024-08-06 04:09:38,839 DEBUG   HandlerThread:74883 [system_info.py:_probe_git():137] Probing git
+2024-08-06 04:09:38,846 DEBUG   HandlerThread:74883 [system_info.py:_probe_git():145] Probing git done
+2024-08-06 04:09:38,846 DEBUG   HandlerThread:74883 [system_info.py:probe():200] Probing system done
+2024-08-06 04:09:38,846 DEBUG   HandlerThread:74883 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-44-generic-x86_64-with-glibc2.10', 'python': '3.8.5', 'heartbeatAt': '2024-08-05T19:09:38.835018', 'startedAt': '2024-08-05T19:09:36.508380', 'docker': None, 'cuda': None, 'args': ('--seed', '123', '--mode', 'base', '--ckpt_path', 'ckpt/model.ckpt', '--config', 'configs/inference_t2v_512_v2.0.yaml', '--config2', 'configs/training_t2v_512_v2.0.yaml', '--savedir', 'results/base_512_v2', '--n_samples', '1', '--bs', '2', '--height', '128', '--width', '128', '--unconditional_guidance_scale', '12.0', '--ddim_steps', '1', '--ddim_eta', '1.0', '--fps', '28', '--output_dir', 'outputs'), 'state': 'running', 'program': 'scripts/evaluation/train_mmg.py', 'codePathLocal': 'scripts/evaluation/train_mmg.py', 'codePath': 'scripts/evaluation/train_mmg.py', 'git': {'remote': 'https://github.com/AILab-CVC/VideoCrafter.git', 'commit': '11bcd76fc62fb98b9715b994afe45b4fa081120c'}, 'email': 'qkrtpghks1214@gmail.com', 'root': '/home/sehwan/MIIL/VideoCrafter', 'host': 'sehwan--Ubuntu', 'username': 'sehwan', 'executable': '/home/sehwan/anaconda3/envs/videocrafter/bin/python3', 'cpu_count': 16, 'cpu_count_logical': 24, 'cpu_freq': {'current': 996.2510416666669, 'min': 800.0, 'max': 4950.0}, 'cpu_freq_per_core': [{'current': 1156.786, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 1525.81, 'min': 800.0, 'max': 5300.0}, {'current': 1184.363, 'min': 800.0, 'max': 5300.0}, {'current': 1123.697, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 1206.079, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 1205.9, 'min': 800.0, 'max': 5400.0}, {'current': 1147.188, 'min': 800.0, 'max': 5400.0}, {'current': 1148.715, 'min': 800.0, 'max': 5400.0}, {'current': 1198.66, 'min': 800.0, 'max': 5400.0}, {'current': 1133.0, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 1253.88, 'min': 800.0, 'max': 5300.0}, {'current': 800.0, 'min': 800.0, 'max': 5300.0}, {'current': 1218.638, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}, {'current': 800.0, 'min': 800.0, 'max': 4200.0}], 'disk': {'/': {'total': 457.3268280029297, 'used': 399.84947967529297}}, 'gpu': 'NVIDIA GeForce RTX 4070 Ti SUPER', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4070 Ti SUPER', 'memory_total': 17171480576}], 'memory': {'total': 31.16647720336914}}
+2024-08-06 04:09:38,846 INFO    HandlerThread:74883 [system_monitor.py:probe():224] Finished collecting system info
+2024-08-06 04:09:38,846 INFO    HandlerThread:74883 [system_monitor.py:probe():227] Publishing system info
+2024-08-06 04:09:38,846 DEBUG   HandlerThread:74883 [system_info.py:_save_conda():209] Saving list of conda packages installed into the current environment
+2024-08-06 04:09:39,715 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_created():271] file/dir created: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/conda-environment.yaml
+2024-08-06 04:09:39,963 DEBUG   HandlerThread:74883 [system_info.py:_save_conda():224] Saving conda packages done
+2024-08-06 04:09:39,964 INFO    HandlerThread:74883 [system_monitor.py:probe():229] Finished publishing system info
+2024-08-06 04:09:39,968 DEBUG   SenderThread:74883 [sender.py:send():379] send: files
+2024-08-06 04:09:39,968 INFO    SenderThread:74883 [sender.py:_save_file():1454] saving file wandb-metadata.json with policy now
+2024-08-06 04:09:40,026 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: python_packages
+2024-08-06 04:09:40,026 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: python_packages
+2024-08-06 04:09:40,027 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: stop_status
+2024-08-06 04:09:40,027 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: stop_status
+2024-08-06 04:09:40,028 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-06 04:09:40,362 DEBUG   SenderThread:74883 [sender.py:send():379] send: telemetry
+2024-08-06 04:09:40,696 INFO    wandb-upload_0:74883 [upload_job.py:push():130] Uploaded file /tmp/tmptk30wor6wandb/lv14pv26-wandb-metadata.json
+2024-08-06 04:09:40,714 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/conda-environment.yaml
+2024-08-06 04:09:40,715 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_created():271] file/dir created: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/wandb-metadata.json
+2024-08-06 04:09:40,715 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_created():271] file/dir created: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/output.log
+2024-08-06 04:09:40,715 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_created():271] file/dir created: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/requirements.txt
+2024-08-06 04:09:41,027 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-06 04:09:42,027 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-06 04:09:42,247 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: status_report
+2024-08-06 04:09:42,715 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/output.log
+2024-08-06 04:09:43,027 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-06 04:09:44,027 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-06 04:09:44,715 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/output.log
+2024-08-06 04:09:45,001 DEBUG   SenderThread:74883 [sender.py:send():379] send: exit
+2024-08-06 04:09:45,001 INFO    SenderThread:74883 [sender.py:send_exit():586] handling exit code: 255
+2024-08-06 04:09:45,001 INFO    SenderThread:74883 [sender.py:send_exit():588] handling runtime: 6
+2024-08-06 04:09:45,001 INFO    SenderThread:74883 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-08-06 04:09:45,001 INFO    SenderThread:74883 [sender.py:send_exit():594] send defer
+2024-08-06 04:09:45,001 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:45,001 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 0
+2024-08-06 04:09:45,002 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:45,002 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 0
+2024-08-06 04:09:45,002 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 1
+2024-08-06 04:09:45,002 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:45,002 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 1
+2024-08-06 04:09:45,002 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:45,002 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 1
+2024-08-06 04:09:45,002 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 2
+2024-08-06 04:09:45,002 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:45,002 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 2
+2024-08-06 04:09:45,002 INFO    HandlerThread:74883 [system_monitor.py:finish():203] Stopping system monitor
+2024-08-06 04:09:45,002 DEBUG   SystemMonitor:74883 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-08-06 04:09:45,002 DEBUG   SystemMonitor:74883 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-08-06 04:09:45,002 DEBUG   SystemMonitor:74883 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-08-06 04:09:45,002 INFO    HandlerThread:74883 [interfaces.py:finish():200] Joined cpu monitor
+2024-08-06 04:09:45,003 INFO    HandlerThread:74883 [interfaces.py:finish():200] Joined disk monitor
+2024-08-06 04:09:45,028 INFO    HandlerThread:74883 [interfaces.py:finish():200] Joined gpu monitor
+2024-08-06 04:09:45,028 INFO    HandlerThread:74883 [interfaces.py:finish():200] Joined memory monitor
+2024-08-06 04:09:45,028 INFO    HandlerThread:74883 [interfaces.py:finish():200] Joined network monitor
+2024-08-06 04:09:45,029 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:45,029 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 2
+2024-08-06 04:09:45,029 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 3
+2024-08-06 04:09:45,029 DEBUG   SenderThread:74883 [sender.py:send():379] send: stats
+2024-08-06 04:09:45,029 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:45,029 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 3
+2024-08-06 04:09:45,029 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:45,029 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 3
+2024-08-06 04:09:45,029 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 4
+2024-08-06 04:09:45,029 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:45,029 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 4
+2024-08-06 04:09:45,029 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:45,029 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 4
+2024-08-06 04:09:45,029 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 5
+2024-08-06 04:09:45,029 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:45,029 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 5
+2024-08-06 04:09:45,030 DEBUG   SenderThread:74883 [sender.py:send():379] send: summary
+2024-08-06 04:09:45,030 INFO    SenderThread:74883 [sender.py:_save_file():1454] saving file wandb-summary.json with policy end
+2024-08-06 04:09:45,030 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:45,030 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 5
+2024-08-06 04:09:45,030 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 6
+2024-08-06 04:09:45,030 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:45,030 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 6
+2024-08-06 04:09:45,030 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:45,030 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 6
+2024-08-06 04:09:45,032 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: status_report
+2024-08-06 04:09:45,716 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_created():271] file/dir created: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/wandb-summary.json
+2024-08-06 04:09:46,011 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: poll_exit
+2024-08-06 04:09:46,020 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 7
+2024-08-06 04:09:46,020 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: poll_exit
+2024-08-06 04:09:46,020 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:46,020 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 7
+2024-08-06 04:09:46,020 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:46,020 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 7
+2024-08-06 04:09:46,717 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/config.yaml
+2024-08-06 04:09:46,717 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/output.log
+2024-08-06 04:09:47,017 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: poll_exit
+2024-08-06 04:09:48,381 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 8
+2024-08-06 04:09:48,382 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: poll_exit
+2024-08-06 04:09:48,382 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:48,383 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 8
+2024-08-06 04:09:48,383 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:48,383 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 8
+2024-08-06 04:09:48,383 INFO    SenderThread:74883 [job_builder.py:build():440] Attempting to build job artifact
+2024-08-06 04:09:48,384 INFO    SenderThread:74883 [job_builder.py:_get_source_type():569] is repo sourced job
+2024-08-06 04:09:48,421 INFO    SenderThread:74883 [job_builder.py:build():545] adding wandb-job metadata file
+2024-08-06 04:09:48,427 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 9
+2024-08-06 04:09:48,428 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:48,428 DEBUG   SenderThread:74883 [sender.py:send():379] send: artifact
+2024-08-06 04:09:48,428 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 9
+2024-08-06 04:09:48,718 INFO    Thread-12 :74883 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/output.log
+2024-08-06 04:09:49,019 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: poll_exit
+2024-08-06 04:09:50,021 INFO    SenderThread:74883 [sender.py:send_artifact():1537] sent artifact job-https___github.com_AILab-CVC_VideoCrafter.git_scripts_evaluation_train_mmg.py - {'id': 'QXJ0aWZhY3Q6MTEwNTQ0MjI0NQ==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjM3ODc4Mjg5NQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTEwNTQ0MjI0NQ==', 'versionIndex': 2}}}
+2024-08-06 04:09:50,022 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:50,022 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 9
+2024-08-06 04:09:50,022 INFO    SenderThread:74883 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-08-06 04:09:50,719 INFO    SenderThread:74883 [dir_watcher.py:finish():388] scan: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files
+2024-08-06 04:09:50,719 INFO    SenderThread:74883 [dir_watcher.py:finish():402] scan save: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/config.yaml config.yaml
+2024-08-06 04:09:50,720 INFO    SenderThread:74883 [dir_watcher.py:finish():402] scan save: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/requirements.txt requirements.txt
+2024-08-06 04:09:50,720 INFO    SenderThread:74883 [dir_watcher.py:finish():402] scan save: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/conda-environment.yaml conda-environment.yaml
+2024-08-06 04:09:50,720 INFO    SenderThread:74883 [dir_watcher.py:finish():402] scan save: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/wandb-metadata.json wandb-metadata.json
+2024-08-06 04:09:50,720 INFO    SenderThread:74883 [dir_watcher.py:finish():402] scan save: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/output.log output.log
+2024-08-06 04:09:50,720 INFO    SenderThread:74883 [dir_watcher.py:finish():402] scan save: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/wandb-summary.json wandb-summary.json
+2024-08-06 04:09:50,721 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 10
+2024-08-06 04:09:50,721 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: poll_exit
+2024-08-06 04:09:50,721 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:50,721 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 10
+2024-08-06 04:09:50,722 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:50,722 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 10
+2024-08-06 04:09:50,723 INFO    SenderThread:74883 [file_pusher.py:finish():169] shutting down file pusher
+2024-08-06 04:09:51,020 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: poll_exit
+2024-08-06 04:09:51,021 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: poll_exit
+2024-08-06 04:09:51,312 INFO    wandb-upload_1:74883 [upload_job.py:push():130] Uploaded file /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/requirements.txt
+2024-08-06 04:09:51,557 INFO    wandb-upload_2:74883 [upload_job.py:push():130] Uploaded file /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/conda-environment.yaml
+2024-08-06 04:09:51,561 INFO    wandb-upload_0:74883 [upload_job.py:push():130] Uploaded file /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/config.yaml
+2024-08-06 04:09:51,600 INFO    wandb-upload_4:74883 [upload_job.py:push():130] Uploaded file /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/wandb-summary.json
+2024-08-06 04:09:51,629 INFO    wandb-upload_3:74883 [upload_job.py:push():130] Uploaded file /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/files/output.log
+2024-08-06 04:09:51,830 INFO    Thread-11 :74883 [sender.py:transition_state():614] send defer: 11
+2024-08-06 04:09:51,830 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:51,831 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 11
+2024-08-06 04:09:51,831 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:51,831 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 11
+2024-08-06 04:09:51,831 INFO    SenderThread:74883 [file_pusher.py:join():175] waiting for file pusher
+2024-08-06 04:09:51,832 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 12
+2024-08-06 04:09:51,832 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:51,832 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 12
+2024-08-06 04:09:51,833 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:51,833 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 12
+2024-08-06 04:09:51,833 INFO    SenderThread:74883 [file_stream.py:finish():601] file stream finish called
+2024-08-06 04:09:52,021 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: poll_exit
+2024-08-06 04:09:52,172 INFO    SenderThread:74883 [file_stream.py:finish():605] file stream finish is done
+2024-08-06 04:09:52,172 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 13
+2024-08-06 04:09:52,172 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: poll_exit
+2024-08-06 04:09:52,173 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:52,173 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 13
+2024-08-06 04:09:52,173 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:52,174 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 13
+2024-08-06 04:09:52,174 INFO    SenderThread:74883 [sender.py:transition_state():614] send defer: 14
+2024-08-06 04:09:52,174 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: defer
+2024-08-06 04:09:52,174 INFO    HandlerThread:74883 [handler.py:handle_request_defer():184] handle defer: 14
+2024-08-06 04:09:52,176 DEBUG   SenderThread:74883 [sender.py:send():379] send: final
+2024-08-06 04:09:52,176 DEBUG   SenderThread:74883 [sender.py:send():379] send: footer
+2024-08-06 04:09:52,176 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: defer
+2024-08-06 04:09:52,176 INFO    SenderThread:74883 [sender.py:send_request_defer():610] handle sender defer: 14
+2024-08-06 04:09:52,177 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: poll_exit
+2024-08-06 04:09:52,178 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: poll_exit
+2024-08-06 04:09:52,179 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: server_info
+2024-08-06 04:09:52,180 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: server_info
+2024-08-06 04:09:52,184 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: poll_exit
+2024-08-06 04:09:52,185 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: get_summary
+2024-08-06 04:09:52,186 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: sampled_history
+2024-08-06 04:09:52,187 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: internal_messages
+2024-08-06 04:09:52,387 DEBUG   SenderThread:74883 [sender.py:send_request():406] send_request: poll_exit
+2024-08-06 04:09:52,388 INFO    MainThread:74883 [wandb_run.py:_footer_history_summary_info():4016] rendering history
+2024-08-06 04:09:52,388 INFO    MainThread:74883 [wandb_run.py:_footer_history_summary_info():4048] rendering summary
+2024-08-06 04:09:52,389 INFO    MainThread:74883 [wandb_run.py:_footer_sync_info():3975] logging synced files
+2024-08-06 04:09:52,389 DEBUG   HandlerThread:74883 [handler.py:handle_request():158] handle_request: shutdown
+2024-08-06 04:09:52,390 INFO    HandlerThread:74883 [handler.py:finish():882] shutting down handler
+2024-08-06 04:09:53,185 INFO    WriterThread:74883 [datastore.py:close():296] close: /home/sehwan/MIIL/VideoCrafter/wandb/run-20240806_040936-ip9ffclk/run-ip9ffclk.wandb
+2024-08-06 04:09:53,388 INFO    SenderThread:74883 [sender.py:finish():1615] shutting down sender
+2024-08-06 04:09:53,388 INFO    SenderThread:74883 [file_pusher.py:finish():169] shutting down file pusher
+2024-08-06 04:09:53,388 INFO    SenderThread:74883 [file_pusher.py:join():175] waiting for file pusher

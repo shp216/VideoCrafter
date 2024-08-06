@@ -43,9 +43,17 @@ def run_inference(args, gpu_num, gpu_no, **kwargs):
     ## step 1: model config
     ## -----------------------------------------------------------------
     config = OmegaConf.load(args.config)
+    print("###########################")
+    print("config: \n", config)
+    print('###########################')
+
     #data_config = config.pop("data", OmegaConf.create())
     model_config = config.pop("model", OmegaConf.create())
+
     model = instantiate_from_config(model_config)
+    # print("############################################################################################")
+    # print(model)
+    # print("############################################################################################")
     model = model.cuda(gpu_no)
     assert os.path.exists(args.ckpt_path), f"Error: checkpoint [{args.ckpt_path}] Not Found!"
     model = load_model_checkpoint(model, args.ckpt_path)
@@ -56,8 +64,7 @@ def run_inference(args, gpu_num, gpu_no, **kwargs):
     ## latent noise shape
     h, w = args.height // 8, args.width // 8
     frames = model.temporal_length if args.frames < 0 else args.frames
-    channels = model.channels
-    
+    channels = model.channels #4
     ## saving folders
     os.makedirs(args.savedir, exist_ok=True)
 
@@ -74,6 +81,7 @@ def run_inference(args, gpu_num, gpu_no, **kwargs):
     indices = list(range(samples_split*gpu_no, samples_split*(gpu_no+1)))
     if gpu_no == 0 and residual_tail != 0:
         indices = indices + list(range(num_samples-residual_tail, num_samples))
+    #indices example [0,1]
     prompt_list_rank = [prompt_list[i] for i in indices]
 
     ## conditional input
@@ -99,13 +107,16 @@ def run_inference(args, gpu_num, gpu_no, **kwargs):
         filenames = filename_list_rank[idx_s:idx_e]
         noise_shape = [batch_size, channels, frames, h, w]
         fps = torch.tensor([args.fps]*batch_size).to(model.device).long()
+        
 
         prompts = prompt_list_rank[idx_s:idx_e]
         if isinstance(prompts, str):
             prompts = [prompts]
+        # prompts -> batch size에 맞게 prompt가 list로 생성
+            
         #prompts = batch_size * [""]
         text_emb = model.get_learned_conditioning(prompts)
-
+        # text_emb_size: [bs,77,1024]
         if args.mode == 'base':
             cond = {"c_crossattn": [text_emb], "fps": fps}
         elif args.mode == 'i2v':
@@ -118,7 +129,7 @@ def run_inference(args, gpu_num, gpu_no, **kwargs):
         else:
             raise NotImplementedError
 
-        ## inference
+        ## inference -> input size:[bs,4,temporal length, w//8, h//8] = output size
         batch_samples = batch_ddim_sampling(model, cond, noise_shape, args.n_samples, \
                                                 args.ddim_steps, args.ddim_eta, args.unconditional_guidance_scale, **kwargs)
         ## b,samples,c,t,h,w

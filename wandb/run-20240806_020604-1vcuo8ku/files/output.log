@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "scripts/evaluation/train_mmg.py", line 236, in <module>
+    train_mmg(videocrafter_args, gpu_num, rank)
+  File "scripts/evaluation/train_mmg.py", line 218, in train_mmg
+    lr_scheduler,
+UnboundLocalError: local variable 'lr_scheduler' referenced before assignment
+Number of trainable parameters: 1413284420
+Number of mmg_model parameters: 1850970924
+loading annotations from scripts/evaluation/data/audiocaps.csv ...
+data scale: 876

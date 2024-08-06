@@ -12,7 +12,7 @@ from lvdm.models.samplers.ddim import DDIMSampler
 
 def batch_ddim_sampling(model, cond, noise_shape, n_samples=1, ddim_steps=50, ddim_eta=1.0,\
                         cfg_scale=1.0, temporal_cfg_scale=None, **kwargs):
-    ddim_sampler = DDIMSampler(model)
+    ddim_sampler = DDIMSampler(model) #DDIMSampler에서 model이 어떻게 작동하는지 봐야함
     uncond_type = model.uncond_type
     batch_size = noise_shape[0]
 
@@ -63,6 +63,11 @@ def batch_ddim_sampling(model, cond, noise_shape, n_samples=1, ddim_steps=50, dd
         ## reconstruct from latent to pixel space
         batch_images = model.decode_first_stage_2DAE(samples)
         batch_variants.append(batch_images)
+        # print("##########################################################")
+        # print("Output shape: ", samples.shape)
+        # print("After Decoding shape: ", batch_images.shape)
+        # print("##########################################################")
+
     ## batch, <samples>, c, t, h, w
     batch_variants = torch.stack(batch_variants, dim=1)
     return batch_variants
